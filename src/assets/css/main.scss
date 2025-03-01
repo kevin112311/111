@@ -1,0 +1,154 @@
+.top-bar {
+    display: flex;
+    flex-direction: row;
+    padding-top: 15px;
+}
+
+.dropdown {
+    position: absolute;
+    z-index: 4;
+    background-color: rgba(215, 212, 209, 1);
+}
+
+.choose-game {
+    padding-left: 10px;
+}
+
+.input-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.save-info {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.input-info span {
+    margin-right: 20px;
+    color: white;
+}
+
+.input-info span:hover {
+    cursor: pointer;
+
+}
+
+.mid-bar-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70px;
+    width: 100%;
+}
+
+.mid-bar {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+.custom-select-wrapper {
+    position: relative;
+    width: 150px;
+
+}
+
+select {
+    width: 100%;
+    padding: 10px 30px 10px 15px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    appearance: none;
+    /* 隐藏原生下拉箭头 */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    transition: all 0.3s ease;
+}
+
+select:focus {
+    border-color: #6c63ff;
+    outline: none;
+}
+
+/* 自定义箭头样式 */
+.custom-select-wrapper::after {
+    content: '▼';
+    font-size: 16px;
+    color: #888;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* 聚焦时的边框效果 */
+select:hover {
+    border-color: #6c63ff;
+}
+
+select:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 5px rgba(108, 99, 255, 0.5);
+}
+
+option {
+    padding: 10px;
+    background-color: #fff;
+    border: none;
+    font-size: 16px;
+}
+
+option:hover {
+    background-color: #f0f0f0;
+}
+
+.seachinput {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: large;
+    width: 350px;
+}
+
+.search-main {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #333;
+    border-radius: 40px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.searchbutton img {
+    padding-top: 5px;
+    width: 30px;
+    /* 设置图片的宽度 */
+    height: 30px;
+    /* 设置图片的高度 */
+}
+
+.sp-ziti {
+    font-size: x-large;
+    font-style: italic;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .custom-select-wrapper {
+        width: 100px;
+    }
+
+    .seachinput {
+        width: 200px;
+    }
+}

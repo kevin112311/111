@@ -1,0 +1,83 @@
+ul {
+    list-style: none;
+    /* 去除默认的项目符号 */
+    padding: 0;
+    /* 去除内边距 */
+    margin: 0;
+    /* 去除外边距 */
+}
+
+li {
+    margin: 0;
+    /* 去除外边距 */
+    padding: 0;
+    /* 去除内边距 */
+    cursor: pointer;
+    /* 设置光标为指针，提示可以点击 */
+    display: flex;
+    /* 使用 flexbox 布局，便于图标和文本对齐 */
+    align-items: center;
+    /* 垂直居中对齐 */
+}
+
+li {
+    list-style-type: none;
+    /* 禁用默认的项目符号 */
+}
+
+li:hover,
+li:focus,
+li:active {
+    background: none;
+    color: inherit;
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    /* 或者指定自定义字体 */
+    line-height: 1.5;
+    /* 设置行高 */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+input {
+    all: unset;
+    /* 移除所有默认样式，包括 padding, margin, border, background 等 */
+    font-family: inherit;
+    /* 保持继承的字体 */
+    font-size: inherit;
+    /* 保持继承的字体大小 */
+    line-height: inherit;
+    /* 保持继承的行高 */
+    color: inherit;
+    /* 保持继承的文本颜色 */
+}
+
+input {
+    padding-top: 15px;
+    border-bottom: 2px solid black;
+}
+
+button {
+    all: unset;
+    /* 移除所有默认样式，包括边框、内边距、字体等 */
+    background: transparent;
+    /* 设置背景为透明 */
+    border: none;
+    /* 移除默认边框 */
+    padding: 0;
+    /* 移除内边距 */
+    font: inherit;
+    /* 继承父元素的字体 */
+    color: inherit;
+    /* 继承父元素的文本颜色 */
+    cursor: pointer;
+    /* 设置鼠标悬停时显示为指针 */
+}
