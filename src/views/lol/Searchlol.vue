@@ -24,7 +24,7 @@ export default {
 </script>
 <template>
   <p class='sp-ziti'>隐私保护</p>
-  <p class='sp-ziti'>不会收集用户的任何数据</p>
+  <p class='sp-ziti'>不会收集用户的任何数据5</p>
   <div class="search-main">
     <div class="custom-select-wrapper">
       <select id='lol-region' class='seachbar'>

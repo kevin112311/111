@@ -1,5 +1,14 @@
 {
-    "routes": [
-      { "src": "/riot.txt", "dest": "/public/riot.txt" }
-    ]
-  }
+  "routes": [
+    {
+      "src": "/riot.txt",
+      "dest": "/public/riot.txt"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
