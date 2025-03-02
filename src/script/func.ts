@@ -1,8 +1,8 @@
 /* eslint-disable no-var */
 import axios from 'axios';
 import type { RankData, Matchinfo } from './data';
-const backendUrl = 'http://localhost:5000';
-//const backendUrl = 'https://kktxba.vercel.app';
+//const backendUrl = 'http://localhost:5000';
+const backendUrl = 'https://kktxba.vercel.app';
 //const backendUrl = 'http://111.229.130.174:5000';
 
 export function getloldata(regin: string, name: string, code: string, start: number = 0, end: number = 0, count: number = 20, type: string = '', queue: number = 0) {
