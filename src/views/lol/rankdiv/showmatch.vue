@@ -14,7 +14,6 @@ const props = defineProps<{
 const now: Ref<string[]> = ref([]);
 const update = ref(false);
 const getmorematchs = async () => {
-    /*
     if(props.match !== null && props.match !== undefined){
         const message = props.part1 + '/' +  props.ppuid
             if(!update.value){
@@ -30,8 +29,7 @@ const getmorematchs = async () => {
                     now.value = now.value.concat(temp);
                 }
             }
-        }
-            */
+        }  
 }
 </script>
 <script lang="ts">

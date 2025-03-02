@@ -7,7 +7,8 @@ const props = defineProps<{
     info: string;
     content?: string|null;
 }>();
-const imagePath = new URL('../../assets/pic/' + props.content, import.meta.url).href;
+//const imagePath = new URL('../../assets/pic/' + props.content, import.meta.url).href;
+const imagePath = '/pic/' + props.content;
 const width = props.width != null ? props.width : 20;
 const height = props.height != null ? props.height : 20;
 </script>
