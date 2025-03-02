@@ -5,6 +5,14 @@
       "destination": "/api/$1"
     },
     {
+      "source": "/api/lol/getpuuid/(.*)",
+      "destination": "/api/lol/getpuuid/[...lolcode]"
+    },
+    {
+      "source": "/api/lol/test1/(.*)",
+      "destination": "/api/lol/test1/[..lolcode].js"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
