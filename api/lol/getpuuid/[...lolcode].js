@@ -2,6 +2,7 @@ import axios from 'axios';
 import { regin, key } from '../../11.js';
 
 export default async function handler(req, res) {
+    console.log("我在处理", "wozai")
     const { lolcode } = req.query;
     console.log("我在处理", lolcode)
     const [firstPart, secondPart, thridPart] = lolcode.split('/');

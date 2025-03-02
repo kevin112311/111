@@ -63,4 +63,13 @@ const router = createRouter({
   ]
 })
 
+router.beforeEach((to, from, next) => {
+  if (to.path.startsWith('/api/')) {
+    // 如果路径以 /api/ 开头，直接放行，不进行路由跳转
+    next(false); // 阻止路由跳转
+    return;
+  }
+  next(); // 其他路由正常处理
+});
+
 export default router
