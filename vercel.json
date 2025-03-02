@@ -1,31 +1,8 @@
 {
-  "cleanUrls": true,
-  "headers": [
-    {
-      "source": "/riot.txt",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    }
-  ],
-  "redirects": [],
   "rewrites": [
-    {
-      "source": "/riot.txt",
-      "destination": "/riot.txt"
-    },
     {
       "source": "/(.*)",
       "destination": "/index.html"
-    }
-  ],
-  "routes": [
-    {
-      "src": "^/(?!index\\.html|.*\\.(css|js|png|jpg|jpeg|gif|webp|svg|txt)$)(.*)$",
-      "dest": "/index.html"
     }
   ]
 }
