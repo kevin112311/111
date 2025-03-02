@@ -5,6 +5,7 @@ module.exports = async (req, res) => {
     const { lolcode } = req.query;
     const [firstPart, secondPart, thridPart] = lolcode.split('/');
     const path = secondPart + '/' + thridPart
+    console.log("我在处理", path)
     if (regin.includes(firstPart)) {
         if (firstPart == 'JP') {
             try {

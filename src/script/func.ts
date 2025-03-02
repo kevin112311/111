@@ -14,6 +14,7 @@ export async function getlolppuid(regin: string, name: string, code: string): Pr
     try {
         const response = await axios.get(backendUrl + '/api/lol/getppuid/' + regin + '/' + name + '/' + code, { timeout: 5000 });
         ans = response.data.puuid;
+        console.log(ans);
     } catch (error) { ans = "rejuct"; }
     return ans;
 }
