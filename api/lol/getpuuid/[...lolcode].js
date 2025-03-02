@@ -2,14 +2,14 @@ import axios from 'axios';
 import { regin, key } from '../../11.js';
 
 export default async function handler(req, res) {
-    console.log("我在处理", "wozai")
-    //const { lolcode } = req.query;
-    const url = require('url');
-    const parsedUrl = url.parse(req.url, true);
-    const pathname = parsedUrl.pathname;
-    console.log('请求路径:', pathname);
+    console.log("我在处理", req.url)
+    const fullUrl = `http://${req.headers.host}${req.url}`;
+    const urlObj = new URL(fullUrl);
+    const pathname = urlObj.pathname;
+
     const parts = pathname.split('/');
-    const lolcode = parts[parts.length - 1];
+    const lolcode = parts.slice(4);
+
     console.log("我在处理", lolcode)
     const [firstPart, secondPart, thridPart] = lolcode.split('/');
     const path = secondPart + '/' + thridPart
