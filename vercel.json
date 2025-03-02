@@ -1,12 +1,24 @@
 {
   "rewrites": [
     {
-      "source": "/api/lol/getpuuid/(.*)",
-      "destination": "/api/lol/getpuuid/[...lolcode]"
+      "source": "/api/lol/getsummonerid/(.*)",
+      "destination": "/api/lol/getsummonerid/[...lolcode]"
     },
     {
-      "source": "/api/lol/test1/(.*)",
-      "destination": "/api/lol/test1/[..lolcode].js"
+      "source": "/api/lol/getmatchlist/(.*)",
+      "destination": "/api/lol/getmatchlist/[...lolcode]"
+    },
+    {
+      "source": "/api/lol/getrankbysummerid/(.*)",
+      "destination": "/api/lol/getrankbysummerid/[...lolcode]"
+    },
+    {
+      "source": "/api/lol/getmatchinfo/(.*)",
+      "destination": "/api/lol/getmatchinfo/[...lolcode]"
+    },
+    {
+      "source": "/api/lol/getpuuid/(.*)",
+      "destination": "/api/lol/getpuuid/[...lolcode]"
     },
     {
       "source": "/(.*)",

@@ -2,8 +2,13 @@ import axios from 'axios';
 import { regin, key } from '../../11.js';
 
 export default async function handler(req, res) {
-    const { lolcode } = req.query;
-    const [firstPart, secondPart] = lolcode.split('/');
+    const fullUrl = `http://${req.headers.host}${req.url}`;
+    const urlObj = new URL(fullUrl);
+    const pathname = urlObj.pathname;
+    const parts = pathname.split('/');
+    const lolcode = parts.slice(4);
+    const firstPart = lolcode[0];
+    const secondPart = lolcode[1];
     if (regin.includes(firstPart)) {
         if (firstPart == 'JP') {
             try {

@@ -2,22 +2,15 @@ import axios from 'axios';
 import { regin, key } from '../../11.js';
 
 export default async function handler(req, res) {
-    console.log("我在处理", req.url)
     const fullUrl = `http://${req.headers.host}${req.url}`;
     const urlObj = new URL(fullUrl);
     const pathname = urlObj.pathname;
     const parts = pathname.split('/');
     const lolcode = parts.slice(4);
-    console.log("我在处理", lolcode)
-    console.log("1", lolcode[0])
-    console.log("2", lolcode[1])
-    console.log("3", lolcode[2])
     const firstPart = lolcode[0];
     const secondPart = lolcode[1];
     const thridPart = lolcode[2];
-    //const [firstPart, secondPart, thridPart] = lolcode.split('/');
     const path = secondPart + '/' + thridPart
-    //console.log("我在处理", path)
     if (regin.includes(firstPart)) {
         if (firstPart == 'JP') {
             try {
