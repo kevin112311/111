@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { regin, key } from '../../11.js';
 
-module.exports = async (req, res) => {
+export default async function handler(req, res) {
     const { lolcode } = req.query;
     const [firstPart, secondPart] = lolcode.split('/');
     if (regin.includes(firstPart)) {
