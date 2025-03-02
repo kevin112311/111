@@ -12,9 +12,10 @@ export function getloldata(regin: string, name: string, code: string, start: num
 export async function getlolppuid(regin: string, name: string, code: string): Promise<string> {
     var ans: string = "rejuct";
     try {
-        const response = await axios.get(backendUrl + '/api/lol/getppuid/' + regin + '/' + name + '/' + code, { timeout: 5000 });
+        const response = await axios.get(backendUrl + '/api/lol/getpuuid/' + regin + '/' + name + '/' + code, { timeout: 5000 });
         ans = response.data.puuid;
         console.log(ans);
+        console.log(backendUrl + '/api/lol/getpuuid/' + regin + '/' + name + '/' + code);
     } catch (error) { ans = "rejuct"; }
     return ans;
 }

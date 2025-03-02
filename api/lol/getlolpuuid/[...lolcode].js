@@ -3,6 +3,7 @@ import { regin, key } from '../../11.js';
 
 module.exports = async (req, res) => {
     const { lolcode } = req.query;
+    console.log("我在处理", lolcode)
     const [firstPart, secondPart, thridPart] = lolcode.split('/');
     const path = secondPart + '/' + thridPart
     console.log("我在处理", path)
