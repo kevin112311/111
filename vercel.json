@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/api/lol/getsummonerid/(.*)",
-      "destination": "/api/lol/getsummonerid/[...lolcode]"
+      "source": "/api/lol/getsummerid/(.*)",
+      "destination": "/api/lol/getsummerid/[...lolcode]"
     },
     {
       "source": "/api/lol/getmatchlist/(.*)",
