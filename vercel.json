@@ -1,10 +1,6 @@
 {
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
-    },
-    {
       "source": "/api/lol/getpuuid/(.*)",
       "destination": "/api/lol/getpuuid/[...lolcode]"
     },
