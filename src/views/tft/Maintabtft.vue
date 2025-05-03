@@ -3,8 +3,8 @@
   import GameIcon from '.././GameIcon.vue'
   import '../../assets/css/main.scss'
   import { ref } from 'vue';
-import Gameinfo from '../lol/gameinfo.vue';
 import Searchtft from './searchtft.vue';
+import Tftgameinfo from './tftgameinfo.vue';
 
   const ccc = getcookie("game")
   var game = "tft"
@@ -25,7 +25,7 @@ import Searchtft from './searchtft.vue';
         </GameIcon>
       </div>
       <div class = "input-info">
-        <Gameinfo></Gameinfo>
+        <Tftgameinfo></Tftgameinfo>
       </div>
       <div class = "save-info">
         <p>保存的信息</p>

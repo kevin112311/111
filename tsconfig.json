@@ -10,5 +10,20 @@
     {
       "path": "./tsconfig.vitest.json"
     }
-  ]
+  ],
+  "compilerOptions": {
+    "baseUrl": ".", // Add this line
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ]
+    },
+    "types": [
+      "node",
+      "jwt-decode"
+    ],
+  }
 }

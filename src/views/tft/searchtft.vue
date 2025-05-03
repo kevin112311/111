@@ -1,16 +1,21 @@
 <script setup lang="ts">
   import '../../assets/css/main.scss'
-  import {goodexpforriotid} from '../../script/func.d.js';
+  import { goodexpforriotid, getloldata } from '../../script/func'
 </script>
 <script lang="ts">
 export default {
   name: 'search-tft',
   methods: {
-    search(){
-      const input = document.getElementById('val-input') as HTMLInputElement;
-      if(input !== null){
-        if(goodexpforriotid(input.value)){
-          return 0;
+    search() {
+      const input = document.getElementById('tft-input') as HTMLInputElement;
+      if (input !== null) {
+        if (goodexpforriotid(input.value)) {
+          const inputval = input.value.split('#');
+          if (inputval.length === 2) {
+            const region = document.getElementById('lol-region') as HTMLSelectElement;
+            getloldata(region.value, inputval[0], inputval[1]);
+            window.location.href = '/tft/s/' + region.value + '%2B' + inputval[0] + '%23' + inputval[1];
+          }
         }
       }
     }
@@ -23,13 +28,14 @@ export default {
   <div class = "search-main">
   <div class = "custom-select-wrapper">
     <select id = 'lol-region' class = 'seachbar'>
-      <option value="ASIA">ASIA</option>
-      <option value="AMERICAS">AMERICAS</option>
-      <option value="EUROPE">EUROPE</option>
-      <option value="SEA">SEA</option>
+      <option value="KR">KR</option>
+        <option value="JP">JP</option>
+        <option value="AMERICAS">AMERICAS</option>
+        <option value="EUROPE">EU</option>
+        <option value="SEA">SEA</option>
     </select>
   </div>
-    <input type="text" id = 'val-input' class = 'seachinput' placeholder="输入你的用户名加id"/>
+    <input type="text" id = 'tft-input' class = 'seachinput' placeholder="输入你的用户名加id"/>
     <button @click= "search" class = 'searchbutton'>
       <img src = "../../assets/pic/search.svg" alt="搜索" />
     </button>

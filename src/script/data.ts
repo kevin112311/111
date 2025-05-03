@@ -11,7 +11,14 @@ export interface RankData {
     inactive: boolean;
     freshBlood: boolean;
     hotStreak: boolean;
+
 }
+export interface Lolsummerdata {
+    id: string;
+    profileIconId: number;
+    summonerLevel: number;
+}
+
 export interface Matchinfo {
     metadata: MetadataDto;
     info: InfoDto;
@@ -122,4 +129,58 @@ interface ZhushouRankallDto {
     puuid: string;
     score: string;
     time: Date;
+}
+export interface phbdata {
+    entries: phbdataentry[];
+}
+export interface phbdataentry {
+    summonerId: string;
+    puuid: string;
+    leaguePoints: number;
+}
+export interface name {
+    puuid: string;
+    gameName: string;
+    tagLine: string;
+}
+export interface TFTMatchinfo {
+    metadata: TFTMetadataDto;
+    info: TFTInfoDto;
+}
+
+export interface TFTMetadataDto {
+
+}
+
+export interface TFTInfoDto {
+    game_datetime: number;
+    game_length: number;
+    participants: TFTParticipantDto[];
+    tft_set_number:Number
+}
+
+export interface TFTParticipantDto {
+    units: TFTunit[];
+    missions: TFTPlayerScore2;
+    level: number;
+    gold_left: number;
+    puuid: string;
+    riotIdGameName: string;
+    riotIdTagline: string;
+    total_damage_to_players: number;
+    win: boolean;
+    placement: number;
+}
+
+export interface TFTunit {
+    character_id: string;
+    itemNames: string[];
+    tier: number;
+}
+export interface TFTPlayerScore2 {
+    PlayerScore2: string
+}
+export interface ContentBlock {
+    type: 'paragraph' | 'heading1' | 'heading2' | 'heading3';
+    content: string;
 }

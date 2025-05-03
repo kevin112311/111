@@ -8,6 +8,7 @@ const props = defineProps<{
     totaldamge: number
     totaldamagetaken: number
     totalmoney: number
+    score? : number
 }>();
 const bol = (props.ppuid === props.info.puuid);
 const damageper = (props.totaldamge > 0) ? parseFloat((props.info.totalDamageDealtToChampions/props.totaldamge*100).toFixed(2)) : 0;

@@ -4,6 +4,7 @@ import matchdetailhero from './matchdetailhero.vue';
 const props = defineProps<{
     info: Matchinfo
     ppuid: string  
+
 }>();
 const totaldamge1 = props.info.info.participants.slice(0, 5).reduce((acc, item) => acc + item.totalDamageDealtToChampions, 0);
 const totaldamge2 = props.info.info.participants.slice(5, 10).reduce((acc, item) => acc + item.totalDamageDealtToChampions, 0);
@@ -13,6 +14,19 @@ const totalmoney1 = props.info.info.participants.slice(0, 5).reduce((acc, item) 
 const totalmoney2 = props.info.info.participants.slice(5, 10).reduce((acc, item) => acc + item.goldEarned, 0);
 const time = props.info.info.gameEndTimestamp;
 const dtime = Math.floor(props.info.info.gameDuration / 60); 
+const datatosecore = [];
+for(let i = 0; i < 10; i++){
+    const score = {
+        kills: props.info.info.participants[i].kills,
+        deaths: props.info.info.participants[i].deaths,
+        assists: props.info.info.participants[i].assists,
+        totalDamageDealtToChampions: props.info.info.participants[i].totalDamageDealtToChampions,
+        totalDamageTaken: props.info.info.participants[i].totalDamageTaken,
+        goldEarned: props.info.info.participants[i].goldEarned,
+    }
+    datatosecore.push(score);
+}
+
 </script>
 <script lang = "ts">
 export default {

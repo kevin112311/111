@@ -5,7 +5,7 @@
   import { useRoute } from 'vue-router';
   import Lolheader from './lolheader.vue';
   import Getlolrank from './getlolrank.vue';
-  import type { RankData } from '@/script/data';
+  import type { RankData,Lolsummerdata } from '@/script/data';
   
   const ccc = getcookie("game")
   var game = "lol"
@@ -23,12 +23,13 @@
   console.log(decodedStr);
   const regex = /^([a-zA-Z]+)\+([\s\S]+?)#([\s\S]+)$/;
   const match = decodedStr.match(regex);
-  const lolrankinfo = ref<RankData|null>();
+  const lolrankinfo = ref<RankData|null|string>();
   const lolmacthinfo = ref<string[]|null>();
   let par1 = "?";
   let par2 = "?";
   let par3 = "?";
   let ppuid = "?";
+  var lolsummer:Lolsummerdata|null = null;
   onMounted(async () => {
     if(match){
       const [, part1, part2, part3] = match;
@@ -37,8 +38,12 @@
       par3 = part3;
       const lolppuid = await getlolppuid(part1, part2, part3);
       ppuid = lolppuid;
-      const lolsummerid = await getlolsummerid(part1 + '/' + lolppuid);
-      lolrankinfo.value = await getlolrankinfo(part1 + '/' + lolsummerid);
+      lolsummer = await getlolsummerid(part1 + '/' + lolppuid);
+      var lolsummerid = "";
+      if(lolsummer !== null && lolsummer !== undefined) {
+        lolsummerid = lolsummer.id;
+      }
+      lolrankinfo.value = await getlolrankinfo(part1 + '/' + lolppuid);
       lolmacthinfo.value = await getlolmatchlist(part1 + '/' +lolppuid);
     }
 });
@@ -62,7 +67,7 @@ export default {
   <div class = "main-lol">
     <Lolheader :game = game></Lolheader>
     <div class="mid-bar">
-        <Getlolrank :message = lolrankinfo :name = par2 :code = par3 :match=lolmacthinfo :ppuid=ppuid :part1=par1 />
+        <Getlolrank :message = lolrankinfo :name = par2 :code = par3 :match=lolmacthinfo :ppuid=ppuid :part1=par1 :summer= lolsummer />
     </div>
     <div class="bottom-bar">
     </div>

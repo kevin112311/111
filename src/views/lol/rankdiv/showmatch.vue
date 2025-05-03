@@ -41,17 +41,19 @@ export default {
 <template>
   <div class="lolmatch-mid">
     <div class="lolmatch-mid1" v-if="(props.match !== null) && (props.match !== undefined) && !update">
-        <!--
+       
         
         <li v-for="(matchid, index) in props.match" :key="index">
             <Showlolmacths :region=props.part1 :matchid=matchid :index=index :puuid = props.ppuid />
         </li>
+         <!--
         正常显示
         测试用
-    -->
+
         <li>
             <Showlolmacths :region=props.part1 :matchid=props.match[0] :index=0 :puuid = props.ppuid />
         </li>
+            -->
         <button class="showmorebutton" @click="getmorematchs"><span>show more</span></button>
     </div>
     <div class="lolmatch-mid1" v-else-if="(props.match !== null) && (props.match !== undefined) && update">

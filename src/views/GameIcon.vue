@@ -10,7 +10,7 @@ const props = defineProps({
   message: String
 });
 
-
+/*
 const gamelist =[
         { value: 'cs2', text: 'CS2', icon: cs2Icon },
         { value: 'lol', text: 'LOL', icon: lolIcon },
@@ -18,12 +18,18 @@ const gamelist =[
         { value: 'dota2', text: 'DOTA2', icon: dota2Icon },
         { value: 'tft', text: 'TFT', icon: tftIcon },
     ];
+    */
+    const gamelist =[
+        { value: 'lol', text: 'LOL', icon: lolIcon },
+        { value: 'tft', text: 'TFT', icon: tftIcon },
+    ];
     const icon = ref(cs2Icon);
-    const icontext = ref('CS2');
+    const icontext = ref('lol');
     for (let i = 0; i < gamelist.length; i++) {
         if (gamelist[i].value == props.message) {
             icon.value = gamelist[i].icon;
             icontext.value = gamelist[i].text;
+            
             break;
         }
     }

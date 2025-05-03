@@ -5,6 +5,8 @@
   import { ref } from 'vue';
 import Gameinfo from './gameinfo.vue';
 import Searchlol from './Searchlol.vue';
+import {jwtDecode} from "jwt-decode"; 
+import Logview  from '../other/Logview.vue';
 
   const ccc = getcookie("game")
   var game = "lol"
@@ -15,6 +17,13 @@ import Searchlol from './Searchlol.vue';
     }
   }
   const gameicon = ref(game)
+  console.log("0");
+  const token = localStorage.getItem('token');
+  if(token != null){
+    const decodedToken = jwtDecode(token);
+    console.log(decodedToken);
+  }
+  
 </script>
 
 <template>
@@ -28,7 +37,9 @@ import Searchlol from './Searchlol.vue';
         <Gameinfo></Gameinfo>
       </div>
       <div class = "save-info">
-        <p>保存的信息</p>
+        <!--
+        <a href="/login">登陆</a>-->
+        <Logview></Logview>
       </div>
     </div>
     <div class="mid-bar">

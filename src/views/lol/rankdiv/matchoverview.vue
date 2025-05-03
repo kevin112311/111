@@ -4,6 +4,7 @@ import Pic from '@/views/other/pic.vue';
 const props = defineProps<{
     part: ParticipantDto
     time : number|undefined
+
 }>();
 let timestamp = props.time!= undefined ? props.time : 0;
 let date = new Date(timestamp);
@@ -49,7 +50,7 @@ export default {
         </div>
         <div class="match-overview-mid">
             <p>time</p>
-            <p>{{ date.getFullYear() }}.{{ month}}.{{ date.getDate()}}</p>
+            <p>{{ date.getFullYear() }}.{{ month }}.{{ date.getDate() }}</p>
         </div>
     </div>
 </template>

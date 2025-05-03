@@ -4,7 +4,7 @@ import type { ParticipantDto } from '@/script/data';
 const props = defineProps<{
     width?: number;
     height?: number;
-    info: string;
+    info?: string;
     content?: string|null;
 }>();
 //const imagePath = new URL('../../assets/pic/' + props.content, import.meta.url).href;
